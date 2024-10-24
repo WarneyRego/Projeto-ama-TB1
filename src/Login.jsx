@@ -1,4 +1,5 @@
- 
+ //Pag de login, quando o user clicar no botão de login, ele será redirecionado para a sua dashboard de acordo com a role 
+ //(qualquer coisinha já quebra tudo, cuidado até qnd for criar div)
   import React, { useState } from "react";
   import app from "./firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";

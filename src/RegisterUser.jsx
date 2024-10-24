@@ -1,7 +1,9 @@
+// Cadastro de users, parte que só o adm tem acesso
 import React, { useState } from "react";
 import app from "./firebaseConfig"; 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
+import './estilização/RegisterUser.css' 
 
 const RegisterUser = () => {
   const [email, setEmail] = useState("");
@@ -65,15 +67,17 @@ const RegisterUser = () => {
   };
 
   return (
+    <div className="tabela">
+      <div className="painel">
     <form onSubmit={handleRegister}>
       <input
-        type="email"
+        type="email"  className="itemz"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
         required
       />
-      <input
+      <input  className="itemz"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -89,7 +93,7 @@ const RegisterUser = () => {
      
       {role === "Family" && (
         <>
-          <input
+          <input className="itemz"
             type="text"
             value={ra}
             onChange={(e) => setRa(e.target.value)}
@@ -101,69 +105,69 @@ const RegisterUser = () => {
             <option value="Cancelado">Cancelado</option>
             <option value="Transferido">Transferido</option>
           </select>
-          <input
+          <input  className="itemz"
             type="text"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             placeholder="Nome"
             required
           />
-          <input
+          <input  className="itemz"
             type="date"
             value={dataNascimento}
             onChange={(e) => setDataNascimento(e.target.value)}
             placeholder="Data de Nascimento"
             required
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={diagnostico}
             onChange={(e) => setDiagnostico(e.target.value)}
             placeholder="Diagnóstico"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={responsavel}
             onChange={(e) => setResponsavel(e.target.value)}
             placeholder="Responsável"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={contato}
             onChange={(e) => setContato(e.target.value)}
             placeholder="Contato"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={gestacao}
             onChange={(e) => setGestacao(e.target.value)}
             placeholder="Gestação"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={parto}
             onChange={(e) => setParto(e.target.value)}
             placeholder="Parto"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={desenvolvimentoInicial}
             onChange={(e) => setDesenvolvimentoInicial(e.target.value)}
             placeholder="Desenvolvimento Inicial"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={alergias}
             onChange={(e) => setAlergias(e.target.value)}
             placeholder="Alergias"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={medicacoes}
             onChange={(e) => setMedicacoes(e.target.value)}
             placeholder="Medicações"
           />
-          <input
+          <input  className="itemz"
             type="text"
             value={observacaoAdministrativa}
             onChange={(e) => setObservacaoAdministrativa(e.target.value)}
@@ -173,6 +177,8 @@ const RegisterUser = () => {
       )}
       <button type="submit">Criar Usuário</button>
     </form>
+    </div>
+    </div>
   );
 };
 
