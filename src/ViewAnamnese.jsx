@@ -39,7 +39,7 @@ const ViewAnamnese = () => {
       <ul>
         {anamneses.map((anamnese) => (
           <li key={anamnese.id}>
-            {anamnese.ra} - {anamnese.queixas}
+            {anamnese.nome} -RA:  {anamnese.id}
             <button onClick={() => handleSelectAnamnese(anamnese)}>Editar</button>
           </li>
         ))}
@@ -71,6 +71,42 @@ const ViewAnamnese = () => {
                 type="text"
                 value={editData.historicoFamiliar}
                 onChange={(e) => setEditData({ ...editData, historicoFamiliar: e.target.value })}
+              />
+            </div>
+            <div>
+              <label>Histórico Pre definido:</label>
+              <input
+                type="text"
+                value={editData.historicoPreDefinido}
+                onChange={(e) => setEditData({ ...editData, historicoPreDefinido: e.target.value })}
+              />
+            </div>
+            <div>
+              <label>Observacao Administrativa:</label>
+              <input
+                type="text"
+                value={editData.observacaoAdministrativa}
+                onChange={(e) => setEditData({ ...editData, observacaoAdministrativa: e.target.value })}
+              />
+            </div>
+            <div>
+              <label>queixas
+              :</label>
+              <input
+                type="text"
+                value={editData.observacaoAdministrativa}
+                onChange={(e) => setEditData({ ...editData, queixas
+                  : e.target.value })}
+              />
+            </div>
+            <div>
+              <label>Seleção Queixas Comuns
+              :</label>
+              <input
+                type="text"
+                value={editData.selecaoQueixasComuns}
+                onChange={(e) => setEditData({ ...editData, selecaoQueixasComuns
+                  : e.target.value })}
               />
             </div>
             {/* Adicionar o resto dos campos da  anamnese aqui */}
