@@ -1,0 +1,57 @@
+
+.container{
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   
+   
+    
+}
+.titulo{
+    top: 0;
+    position: absolute;
+  font-weight: bold;
+display: flex;
+  font-family: arial;
+  color: white;
+  
+}
+.titulo2{
+    font-family: arial;
+    color: white;
+    top: 35px;
+    position: absolute;
+}
+
+.item{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border: none;
+   padding: 20px;
+   border-radius: 20px;
+   margin-bottom: 14px;
+   outline: none;
+   
+}
+.botao{
+    padding: 20px;
+    width: 100%;
+    border: none;
+    transition: 500ms;
+    border-radius: 40px;
+}
+.botao:hover{
+    background-color: #7f4caf;
+    color: white;
+    cursor: pointer;
+}
+
+.login{
+  color: white;
+  font-family: arial;
+  
+}
