@@ -1,0 +1,214 @@
+.user{
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    
+ 
+  
+}
+h1{
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Documents-btn {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    height: 45px;
+    border: none;
+    padding: 0px 15px;
+    border-radius: 5px;
+    background-color: rgb(49, 49, 83);
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .folderContainer {
+    width: 40px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .fileBack {
+    z-index: 1;
+    width: 80%;
+    height: auto;
+  }
+  .filePage {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.3s ease-out;
+  }
+  .fileFront {
+    width: 85%;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    opacity: 0.95;
+    transform-origin: bottom;
+    transition: all 0.3s ease-out;
+  }
+  .text {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .Documents-btn:hover .filePage {
+    transform: translateY(-5px);
+  }
+  .Documents-btn:hover {
+    background-color: rgb(58, 58, 94);
+  }
+  .Documents-btn:active {
+    transform: scale(0.95);
+  }
+  .Documents-btn:hover .fileFront {
+    transform: rotateX(30deg);
+  }
+  .anamnses{
+    display: flex;
+  flex-direction: column;
+  color: rgb(77, 77, 77);
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  min-height: 100vh;
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+.lista{
+  margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.user{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1em;
+}
+.edit{
+    margin-top: 100px;
+    background-color: rgb(255, 255, 255);
+}
+.btn {
+    padding: 12px 24px;
+    margin-left: 13px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+    margin-top: 1em;
+    width: 91%;
+  
+  }
+  
+  .btn:hover {
+    
+    background-color: #ccc;
+    color: #333;
+  }
+
+
+.carder {
+   margin-top: 10em;
+ margin-left: 5em;
+    width :350px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+  }
+  
+  .card-header {
+    background-color: #333;
+    padding: 16px;
+    
+  }
+  
+  .card-header .text-header {
+    margin: 0;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    margin-left: 13px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer
+  }
+  
+  .btn:hover {
+    background-color: #ccc;
+    color: #333;
+  }
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 1.5rem;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+    .anamnses{
+        display: flex;
+      flex-direction: column;
+    }
+  .lista{
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .carder {
+  
+   
+    margin-left: 5em;
+  }
+}

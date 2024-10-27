@@ -1,0 +1,147 @@
+
+.containere {
+    position: relative; 
+    padding: 40px;
+   
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden; 
+}
+
+
+.containere::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/imagem de fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1; 
+}
+.containere::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+    z-index: -1; 
+}
+
+.nave{
+    font-size: 2rem ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+button {
+    width: 250px;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #bebb04;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.aroy {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100%;
+    
+}
+.verAN{
+    max-height: 260px;
+    background-color: #bebb04;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    margin-bottom: 50px;
+}
+.verAN:hover{
+    background-color: #fffb00;
+}
+
+button:hover {
+    background-color: #fffb00;
+   
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card {
+  box-sizing: border-box;
+  width: 250px;
+  height: 254px;
+  background: #ffe49c;
+  border: 2px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+
+.card:hover {
+  border: 2px solid black;
+  transform: scale(1.10);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+.cadastro_foto{
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 600px) {
+    .containere {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .aroy {
+        flex-direction: column; 
+        align-items: center;
+    }
+}

@@ -1,19 +1,4 @@
 .tabela{
     display: flex;
-    background-color: blueviolet;
     min-height: 100vh;
-  
-}
-
-.itemz{
-    
-    padding: 20px;
-    flex-wrap: wrap;
-    
-}
-.painel{
-    background-color: rgba(0, 0, 0, 0.39);
-    padding: 90px;
-    align-items: center;
-    justify-content: center;
 }

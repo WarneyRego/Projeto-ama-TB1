@@ -6,6 +6,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import  "./estilização/Login.css";
+import Logo from  "./elements/Logo2.png";
 
 
 const Login = () => {
@@ -49,34 +50,50 @@ const Login = () => {
     
   
     <>
-     
+  
     <div className='container'>
-
-    <form  onSubmit={handleLogin}>
+      <div className="carde">
+        
       
-      <div className="painel">
-      <h1 className="login">Login</h1>
-      <input className='item'
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input  className='item'
-
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Senha"
-        required
-      />
-      <button className="botao" type="submit">Login</button>
+      <form className="form_container"  onSubmit={handleLogin}>
+      <div class="logo_container"> 
+        <img src={Logo} alt="Logo" />
       </div>
-    </form>
+  <div class="title_container">
+    <p class="title">Seja bem-vindo ao site da AMA</p>
+    <span class="subtitle">Realize o Login para prosseguir</span>
+  </div>
+     
+      <br /><br />
+        <div className="inputBox1">
+       
+          <input 
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            
+            required
+          />
+           <span>E-mail</span>
+          </div>
+          <div className="inputBox">
+            
+          <input 
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+           
+            required
+          />
+           <span>Senha</span>
+          </div>
+             <button type="submit" className="enter">Login</button>
+        
+      </form>
+      </div>
     </div>
-    </>
-  );
+  </>
+);
 };
 
 export default Login;
