@@ -7,20 +7,21 @@ import EditUser from "./EditUser";
 import OrganizationalDashboard from "./OrganizationalDashboard"; 
 import FamilyDashboard from "./FamilyDashboard"; 
 import Login from "./Login";
-import AnamnesePage from "./AnamnesePage"; // Importando a página do formulário de anamnese
-import FamilyUsersPage from "./FamilyUsersPage"; // Importando a página da lista de usuários
+import AnamnesePage from "./AnamnesePage"; 
+import FamilyUsersPage from "./FamilyUsersPage";
 import FamilyUsersList from "./FamilyUsersList";
 import FamilyUserDetail from  "./FamilyUserDetail";
 import Navbar from "./elements/Navbar";
 
 function App() {
+  
   return (
   
     <Router>
-       <Navbar />
+       
         {/*Cuidado, esse sistema de rotas parece uma bomba*/}
       <Routes>
-
+       
         {/* Rota da página inicial */}
         <Route path="/" element={<Login/>} />
 

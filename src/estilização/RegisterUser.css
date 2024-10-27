@@ -1,4 +1,143 @@
-.tabela{
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .tabela {
     display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+    background: linear-gradient(to top, #9a9ca1 0%, #c2c4c7 52%, #e0e2e3 100%);
+    padding: 20px;
+  }
+  
+
+  .painel {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .painel:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .formu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .itemz {
+    outline: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .itemz:focus {
+    border-color: #fbff00;
+    box-shadow: 0 0 5px rgba(251, 255, 0, 0.4);
+  }
+  
+  select {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+  }
+ 
+  h1{
+    display: flex;
+    
+   
+  }
+
+
+
+.btno {
+  align-self: center;
+  margin-top: 10px;
+  width: 80%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: rgb(68, 68, 68);
+  background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
 }
+
+.btno:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 230, 0, 0.493);
+}
+
+.btno:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgb(255, 230, 0);
+}
+
+.btno::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btno::after {
+  background-color: rgb(255, 230, 0);
+}
+
+.btno:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+  @media (max-width: 480px) {
+    .painel {
+      padding: 20px;
+    }
+  
+    .itemz {
+      font-size: 14px;
+    }
+  
+    button[type="submit"] {
+      font-size: 14px;
+    }
+    h1{
+      justify-content: center;
+    }
+  }
+  

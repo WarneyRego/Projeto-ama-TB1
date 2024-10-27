@@ -1,7 +1,8 @@
 //Edição de users já criados(vai ser aqui que vão editar o andamento)
 import React, { useState, useEffect } from "react";
 import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/firestore";
-
+import './estilização/EditUser.css'
+import Navbar from "./elements/Navbar";
 const EditUser = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -34,32 +35,41 @@ const EditUser = () => {
   };
 
   return (
-    <div>
-      <h1>Editar Cadastro de Usuários</h1>
-
-      <ul>
+    <>
+    <Navbar />
+    <nav><h1>Editar Cadastro de Usuários</h1></nav>
+    <div className="EDIT">
+     
+      
+           <div className="lista_user">
+      <ul className="lista_lista">
         {users.map((user) => (
-          <li key={user.id}>
+          <li className="users" key={user.id}>
             {user.nome} - {user.ra}
-            <button onClick={() => handleSelectUser(user)}>Editar</button>
+            <button className="btn" onClick={() => handleSelectUser(user)}>Editar</button>
           </li>
         ))}
       </ul>
+      </div>
 
       {selectedUser && (
-        <div>
+        <div className="carder">
+          <div className="card-header">
+            <div className="card-texte">
           <h2>Editando Usuário {selectedUser.nome}</h2>
-          <form>
-            <div>
-              <label>Nome:</label>
+          </div>
+          </div>
+          <form className="form">
+            <div className="forme-group">
+              <label>Nome</label>
               <input
                 type="text"
                 value={editData.nome}
                 onChange={(e) => setEditData({ ...editData, nome: e.target.value })}
               />
             </div>
-            <div>
-              <label>Status:</label>
+            <div className="forme-group">
+              <label>Status</label>
               <input
                 type="text"
                 value={editData.status}
@@ -67,11 +77,12 @@ const EditUser = () => {
               />
             </div>
             {/* Adicionar o resto dos campos */}
-            <button type="button" onClick={handleUpdateUser}>Salvar Alterações</button>
+            <button className="btn" type="button" onClick={handleUpdateUser}>Salvar Alterações</button>
           </form>
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import app from "./firebaseConfig";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
 import './estilização/RegisterUser.css' 
+import Navbar from  './elements/Navbar'
 
 const RegisterUser = () => {
   const [email, setEmail] = useState("");
@@ -67,9 +68,16 @@ const RegisterUser = () => {
   };
 
   return (
+<>
+<Navbar />
+<nav><h1>Cadastro de  Usuários</h1></nav>
+
+
+
     <div className="tabela">
+      
       <div className="painel">
-    <form onSubmit={handleRegister}>
+    <form className="formu" onSubmit={handleRegister}>
       <input
         type="email"  className="itemz"
         value={email}
@@ -175,10 +183,11 @@ const RegisterUser = () => {
           />
         </>
       )}
-      <button type="submit">Criar Usuário</button>
+      <button className="btno" type="submit"> Criar usuário</button>
     </form>
     </div>
     </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import "./estilização/ViewAnamnese.css"
+import Navbar from "./elements/Navbar";
 const ViewAnamnese = () => {
   const [anamneses, setAnamneses] = useState([]);
   const [selectedAnamnese, setSelectedAnamnese] = useState(null);
@@ -34,6 +35,7 @@ const ViewAnamnese = () => {
 
   return (
     <>
+    <Navbar />
       <nav><h1>Edição de Anamneses</h1></nav>
       <div className="anamnses">
 

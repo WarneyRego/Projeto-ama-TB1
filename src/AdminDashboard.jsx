@@ -4,6 +4,7 @@ import "./estilização/AdminDashboard.css"
 import edicao from "./assets/edicao.png"
 import cadastro from './assets/cadaster.png'
 import user from  './assets/user.png'
+import Navbar from "./elements/Navbar";
 
 const AdminDashboard = () => {
   const navigate = useNavigate(); 
@@ -21,7 +22,9 @@ const AdminDashboard = () => {
   };
 
   return (
+    
 <>
+<Navbar />
 <nav className="nave">Admin Dashboard</nav>
     <div className="containere">
      
