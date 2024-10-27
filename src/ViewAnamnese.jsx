@@ -35,15 +35,15 @@ const ViewAnamnese = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <nav><h1>Edição de Anamneses</h1></nav>
       <div className="anamnses">
 
-
+          {/*ignore*/}
         <ul className="lista">
           {anamneses.map((anamnese) => (
             <li className="user" key={anamnese.id}>
-              {anamnese.nome} RA:  {anamnese.id}
+              RA:  {anamnese.id}
 
               <button class="Documents-btn" onClick={() => handleSelectAnamnese(anamnese)}>
                 <span class="folderContainer">
@@ -131,7 +131,7 @@ const ViewAnamnese = () => {
             </li>
           ))}
         </ul>
-
+ {/*ignore*/}
         {selectedAnamnese && (
           <div className="carder">
             <div class="card-header">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+import Navbar from  "./elements/Navbar";
 
 const FamilyDashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -50,8 +51,12 @@ const FamilyDashboard = () => {
   }
 
   return (
+    <>
+    
+    <Navbar/>
+    <nav><h1>Painel do Usuário Familiar</h1></nav>
     <div>
-      <h1>Painel do Usuário Familiar</h1>
+      
       
       {/* Botão para mostrar/ocultar informações da TB1 (RESUMINDO: TOGGLE) */}
       <button onClick={handleToggleInfo}>
@@ -73,7 +78,7 @@ const FamilyDashboard = () => {
           <p><strong>Desenvolvimento Inicial:</strong> {userData.desenvolvimentoInicial}</p>
           <p><strong>Alergias:</strong> {userData.alergias}</p>
           <p><strong>Medicações:</strong> {userData.medicacoes}</p>
-          <p><strong>Observação Administrativa:</strong> {userData.observacaoAdministrativa}</p>
+    
         </div>
       )}
 
@@ -94,10 +99,11 @@ const FamilyDashboard = () => {
           <p><strong>Histórico Familiar:</strong> {anamneseData.historicoFamiliar}</p>
           <p><strong>Seleção de Queixas Comuns:</strong> {anamneseData.selecaoQueixas}</p>
           <p><strong>Histórico Pré-definido:</strong> {anamneseData.historicoPreDefinido}</p>
-          <p><strong>Observação Administrativa:</strong> {anamneseData.observacaoAdministrativa}</p>
+ 
         </div>
       )}
     </div>
+    </>
   );
 };
 

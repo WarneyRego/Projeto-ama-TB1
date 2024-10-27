@@ -64,6 +64,7 @@ const RegisterUser = () => {
     } catch (error) {
       console.error("Erro ao criar usuário:", error);
       alert("Erro ao criar usuário: " + error.message);
+      
     }
   };
 
