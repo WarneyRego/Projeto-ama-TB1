@@ -17,7 +17,11 @@ const FamilyUsersPage = () => {
     fetchUsers();
   }, [db]);
 
-  return <FamilyUsersList users={users} />;
+  return (
+  <>
+  
+  <FamilyUsersList users={users} />
+  </>)
 };
 
 export default FamilyUsersPage;
