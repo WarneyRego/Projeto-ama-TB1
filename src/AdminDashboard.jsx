@@ -40,7 +40,7 @@ const AdminDashboard = () => {
  
       </div>
       <div onClick={handleViewAvNeuropsicologica} className="card">
-        <img src={edicaoTb3} alt="Edição de Avaliação Neuropsicológica" />
+        <img src={edicaoTb3} className="cadastro_foto" alt="Edição de Avaliação Neuropsicológica" />
 
       </div>
       <div onClick={handleRegisterUser} className="card">
