@@ -24,6 +24,7 @@ nav {
   .imagem{
     width: 75px;
   }
+  
 
   @media (max-width: 768px) {
   .nav{

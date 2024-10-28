@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import Navbar from "./elements/Navbar";
 import "./OrganizationalDashboard.css";
 import { useNavigate } from "react-router-dom";
+import edicao from './assets/edicao.png'
+import Criar from  './assets/Criara.png'
+import Vera from  './assets/Vera.png'
+import Cadas from   './assets/CadasM.png'
+import ListaU from './assets/ListaU.png'
+
+
 const OrganizationalDashboard = () => {
 
 
@@ -41,23 +48,24 @@ const HandleFamilyList = () => {
 
 
         
-        <div onClick={handleViewAnamnese} className="card">
-         view anamnese
+        <div onClick={handleViewAnamnese} className="card-org">
+         <img src={edicao} alt="" />
         </div>
-        <div onClick={HandleAnamneseForm } className="card">
+        <div onClick={HandleAnamneseForm } className="card-org">
          
-             form
+       <img className="cadastro_foto" src={Cadas} alt="Cadastro de anamnese" />
           
         </div>
-        <div onClick={handleFamilyUserList} className="card">
-              Ir para Lista de Usuários Familiares
+        <div onClick={handleFamilyUserList} className="card-org">
+              <img className="cadastro_foto" src={ListaU} alt="Lista de usuários" />
         </div>
-        <div onClick={handleViewAvNeuropsicologica} className="card">
-          Ver AvNeuropsicologica
+        <div onClick={handleViewAvNeuropsicologica} className="card-org">
+       <img  className="cadastro_foto"  src={Vera} alt="Ver avaliação neuropsicologica" />
         </div>
-        <div onClick={HandleFormNeuropsicologica} className="card">
+        <div  onClick={HandleFormNeuropsicologica} className="card-org">
 
-              Ir para Formulário de AvNeuropsicologica
+             <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
+
            
         </div>
      
