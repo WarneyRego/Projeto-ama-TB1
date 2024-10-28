@@ -7,6 +7,7 @@ const OrganizationalDashboard = () => {
       <h1>Painel do Usuário Organizacional</h1>
       <nav>
         <ul>
+
           <li>
           <Link to="/admin/view-anamnese">Ver Anamnese</Link>
           </li>
@@ -15,11 +16,26 @@ const OrganizationalDashboard = () => {
               Ir para Formulário de Anamnese
             </Link>
           </li>
+
           <li>
             <Link to="/organizational/family-users-list">
               Ir para Lista de Usuários Familiares
             </Link>
           </li>
+          <li>
+          <Link to="/admin/view-avNeuropsicologica">Ver AvNeuropsicologica</Link>
+          </li>
+          <li>
+            <Link to="/organizational/avNeuropsicologica-form">
+              Ir para Formulário de AvNeuropsicologica
+            </Link>
+          </li>
+          <li>
+            <Link to="/organizational/family-users-list">
+              Ir para Lista de Usuários Familiares
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </div>
