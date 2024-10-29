@@ -187,19 +187,7 @@ const ViewAnamnese = () => {
                     onChange={(e) => setEditData({ ...editData, observacaoAdministrativa: e.target.value })}
                   />
                 </div>
-                <div class="form-group">
-                  <label>queixas
-                    :</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    value={editData.observacaoAdministrativa}
-                    onChange={(e) => setEditData({
-                      ...editData, queixas
-                        : e.target.value
-                    })}
-                  />
-                </div>
+              
                 <div class="form-group">
                   <label>Seleção Queixas Comuns
                     :</label>

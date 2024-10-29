@@ -41,8 +41,9 @@ const HandleFamilyList = () => {
 
   return (
     <>
-      <Navbar />
-      <nav>  <h1>Painel do Usuário Organizacional</h1></nav>
+ 
+      <Navbar  />    <nav>  <h1>Painel do Usuário Organizacional</h1></nav>
+      
       <div className="aroy">
 
 

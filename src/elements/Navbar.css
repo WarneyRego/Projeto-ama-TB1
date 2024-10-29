@@ -22,7 +22,12 @@ nav {
     text-decoration: underline;
   }
   .imagem{
-    width: 75px;
+    width: 100px;
+  }
+  nav h1{
+    position: absolute;
+    top: 45px;
+    left: 110px;
   }
   
 
@@ -31,7 +36,7 @@ nav {
     padding: 0px;
   }
   .imagem{
-    width: 70px;
+    width: 100px;
     justify-content: center;
 
   
