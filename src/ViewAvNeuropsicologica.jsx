@@ -125,7 +125,7 @@ const ViewAvNeuropsicologica = () => {
                   </svg>
 
                 </span>
-                <p class="text">AvNeuropsicologicas</p>
+                <p class="text">Editar Avaliação Neuropsicologica</p>
 
               </button>
             </li>

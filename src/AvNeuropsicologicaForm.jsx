@@ -85,7 +85,7 @@ const AvNeuropsicologicaForm = () => {
           placeholder="Observação Administrativa"
         />
       </div>
-      <button className="btno" type="submit">Criar Avaliação Neuropsicológica</button>
+      <button className="btno" type="submit"><p>Criar Avaliação</p></button>
     </form>
     </div>
     </div>
