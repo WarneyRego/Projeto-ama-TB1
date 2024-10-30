@@ -4,7 +4,7 @@ import Navbar from "./elements/Navbar";
 const AvNeuropsicologicaPage = () => {
   return (
     <div>
-     <Navbar/>
+ 
       <AvNeuropsicologicaForm userRole="organizational" />
     </div>
   );
