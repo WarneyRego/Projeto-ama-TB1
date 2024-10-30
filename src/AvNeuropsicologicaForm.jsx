@@ -1,5 +1,5 @@
 // Aqui é a parte de envio da avaliação neuropsicológica
-
+import Navbar from "./elements/Navbar";
 import React, { useState } from "react";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
@@ -36,10 +36,16 @@ const AvNeuropsicologicaForm = () => {
   };
 
   return (
-    <form onSubmit={handleAvNeuropsicologicaSubmit}>
+    <>
+   <Navbar/>
+   <nav><h1>Criação de avaliações neuropsicologicas</h1></nav>
+      <div className="tabela">
+    <div className="painel"> 
+    <form className="formu" onSubmit={handleAvNeuropsicologicaSubmit}>
       <div>
         <label>RA (Registro Acadêmico):</label>
         <input
+        className="itemz"
           type="text"
           value={ra}
           onChange={(e) => setRa(e.target.value)}
@@ -50,6 +56,7 @@ const AvNeuropsicologicaForm = () => {
       <div>
         <label>Lista de Testes:</label>
         <input
+        className="itemz"
           type="text"
           value={listaTeste}
           onChange={(e) => setListaTeste(e.target.value)}
@@ -60,6 +67,7 @@ const AvNeuropsicologicaForm = () => {
       <div>
         <label>Resultados:</label>
         <input
+        className="itemz"
           type="text"
           value={resultados}
           onChange={(e) => setResultados(e.target.value)}
@@ -70,14 +78,18 @@ const AvNeuropsicologicaForm = () => {
       <div>
         <label>Observação Administrativa:</label>
         <input
+        className="itemz"
           type="text"
           value={observacaoAdministrativa}
           onChange={(e) => setObservacaoAdministrativa(e.target.value)}
           placeholder="Observação Administrativa"
         />
       </div>
-      <button type="submit">Salvar Avaliação Neuropsicológica</button>
+      <button className="btno" type="submit">Criar Avaliação Neuropsicológica</button>
     </form>
+    </div>
+    </div>
+    </>
   );
 };
 

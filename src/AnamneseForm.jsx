@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-
+import Navbar from "./elements/Navbar";
 const AnamneseForm = () => {
   const [ra, setRa] = useState("");
   const [queixas, setQueixas] = useState("");
@@ -45,10 +45,15 @@ const AnamneseForm = () => {
   };
 
   return (
-    <form onSubmit={handleAnamneseSubmit}>
+    <>
+    
+    <div className="tabela">
+      <div className="painel">
+    <form className="formu" onSubmit={handleAnamneseSubmit}>
       <div>
-        <label>RA (Registro Acadêmico):</label>
+
         <input
+        className="itemz"
           type="text"
           value={ra}
           onChange={(e) => setRa(e.target.value)}
@@ -57,8 +62,9 @@ const AnamneseForm = () => {
         />
       </div>
       <div>
-        <label>Queixas:</label>
+      
         <input
+        className="itemz"
           type="text"
           value={queixas}
           onChange={(e) => setQueixas(e.target.value)}
@@ -67,8 +73,9 @@ const AnamneseForm = () => {
         />
       </div>
       <div>
-        <label>Histórico Pessoal:</label>
+        
         <input
+        className="itemz"
           type="text"
           value={historicoPessoal}
           onChange={(e) => setHistoricoPessoal(e.target.value)}
@@ -77,8 +84,9 @@ const AnamneseForm = () => {
         />
       </div>
       <div>
-        <label>Histórico Familiar:</label>
+        
         <input
+        className="itemz"
           type="text"
           value={historicoFamiliar}
           onChange={(e) => setHistoricoFamiliar(e.target.value)}
@@ -87,8 +95,9 @@ const AnamneseForm = () => {
         />
       </div>
       <div>
-        <label>Seleção de Queixas Comuns:</label>
+        
         <input
+        className="itemz"
           type="text"
           value={selecaoQueixasComuns}
           onChange={(e) => setSelecaoQueixasComuns(e.target.value)}
@@ -96,8 +105,9 @@ const AnamneseForm = () => {
         />
       </div>
       <div>
-        <label>Histórico Pré-definido:</label>
+        
         <input
+        className="itemz"
           type="text"
           value={historicoPreDefinido}
           onChange={(e) => setHistoricoPreDefinido(e.target.value)}
@@ -105,16 +115,21 @@ const AnamneseForm = () => {
         />
       </div>
       <div>
-        <label>Observação Administrativa:</label>
+       
         <input
+        className="itemz"
           type="text"
           value={observacaoAdministrativa}
           onChange={(e) => setObservacaoAdministrativa(e.target.value)}
           placeholder="Observação Administrativa"
         />
       </div>
-      <button type="submit">Salvar Anamnese</button>
+      
+      <button className="btno" type="submit">Salvar Anamnese</button>
     </form>
+    </div>
+    </div>
+    </>
   );
 };
 

@@ -1,10 +1,12 @@
 import React from "react";
 import AnamneseForm from './AnamneseForm';
-
+import Navbar from "./elements/Navbar";
 const AnamnesePage = () => {
   return (
     <div>
-      <h1>Formulário de Anamnese</h1>
+       <Navbar/>
+      <nav><h1>Criação de Anamnese</h1></nav>
+ 
       <AnamneseForm userRole="organizational" />
     </div>
   );

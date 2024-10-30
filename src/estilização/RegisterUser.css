@@ -46,6 +46,8 @@ body {
     border: 1px solid #d1d5db;
     background-color: #f9fafb;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    
   }
   
   .itemz:focus {
