@@ -1,5 +1,5 @@
 import React from "react";
-import AnamneseForm from './PlanoForm.jsx';
+import PlanoForm from './PlanoForm.jsx';
 
 const PlanoPage = () => {
   return (

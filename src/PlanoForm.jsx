@@ -28,7 +28,7 @@ const PlanoForm = () => {
     try {
       const planoDocRef = doc(db, "TB4_Plano", ra);
       await setDoc(planoDocRef, planoData);
-      alert("Dados do Plano salvos com sucesso!");
+      alert("Dados do Plano de Cuidado salvos com sucesso!");
 
       // Limpar os campos após o envio
       setRa("");

@@ -3,19 +3,19 @@ import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/fire
 import "./estilização/ViewPlano.css"
 import Navbar from "./elements/Navbar";
 const ViewPlano = () => {
-  const [plano, setPlano] = useState([]);
+  const [planos, setPlanos] = useState([]);
   const [selectedPlano, setSelectedPlano] = useState(null);
   const [editData, setEditData] = useState({});
   const db = getFirestore();
 
   useEffect(() => {
-    const fetchPlano = async () => {
-      const querySnapshot = await getDocs(collection(db, "TB4_Plano"));
-      const planoData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setPlano(planoData);
+    const fetchPlanos = async () => {
+      const querySnapshot = await getDocs(collection(db, "TB4_Plano_De_Cuidados"));
+      const planosData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setPlanos(planosData);
     };
 
-    fetchPlano();
+    fetchPlanos();
   }, [db]);
 
   const handleSelectPlano = (plano) => {
@@ -25,7 +25,7 @@ const ViewPlano = () => {
 
   const handleUpdatePlano = async () => {
     try {
-      const docRef = doc(db, "TB4_Plano", selectedPlano.id);
+      const docRef = doc(db, "TB4_Plano_De_Cuidados", selectedPlano.id);
       await updateDoc(docRef, editData);
       alert("Plano atualizado com sucesso!");
     } catch (error) {
@@ -36,12 +36,12 @@ const ViewPlano = () => {
   return (
     <>
       <Navbar />
-      <nav><h1>Edição do Plano</h1></nav>
-      <div className="planos">
+      <nav><h1>Edição do Plano de Cuidados</h1></nav>
+      <div className="Planos">
 
-          {/*ignore*/}
+
         <ul className="lista">
-          {plano.map((plano) => (
+          {planos.map((plano) => (
             <li className="user" key={plano.id}>
               RA:  {plano.id}
 
@@ -137,7 +137,7 @@ const ViewPlano = () => {
             <div class="card-header">
 
               <div className="text-header">
-                <h2>Editando Plano{selectedPlano.ra}</h2>
+                <h2>Editando Plano de Cuidados{selectedPlano.ra}</h2>
               </div>
             </div>
             <div class="card-body">
@@ -152,15 +152,6 @@ const ViewPlano = () => {
                   />
                 </div>
                 <div class="form-group">
-                  <label>Nomes da Medicação:</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    value={editData.nomesDaMedicação}
-                    onChange={(e) => setEditData({ ...editData, nomesDaMedicação: e.target.value })}
-                  />
-                </div>
-                <div class="form-group">
                   <label>Nomes Da Medicação:</label>
                   <input
                     class="form-control"
@@ -170,12 +161,30 @@ const ViewPlano = () => {
                   />
                 </div> 
                 <div class="form-group">
+                  <label>Dosagem:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    value={editData.dosagem}
+                    onChange={(e) => setEditData({ ...editData, dosagem: e.target.value })}
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Frequência:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    value={editData.frequencia}
+                    onChange={(e) => setEditData({ ...editData, frequencia: e.target.value })}
+                  />
+                </div>
+                <div class="form-group">
                   <label>Orientações:</label>
                   <input
                     class="form-control"
                     type="text"
-                    value={editData.Orientações}
-                    onChange={(e) => setEditData({ ...editData, Orientações: e.target.value })}
+                    value={editData.orientacoes}
+                    onChange={(e) => setEditData({ ...editData, orientacoes: e.target.value })}
                   />
                 </div>
                 <div class="form-group">
@@ -187,23 +196,9 @@ const ViewPlano = () => {
                     onChange={(e) => setEditData({ ...editData, observacaoAdministrativa: e.target.value })}
                   />
                 </div>
-              
-                <div class="form-group">
-                  <label>frequencia
-                    :</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    value={editData.frequencia}
-                    onChange={(e) => setEditData({
-                      ...editData, frequencia
-                        : e.target.value
-                    })}
-                  />
-                </div>
 
 
-                <button class="btn" type="button" onClick={handleUpdateAnamnese}>Salvar Alterações</button>
+                <button class="btn" type="button" onClick={handleUpdatePlano}>Salvar Alterações</button>
               </form>
             </div>
           </div>
@@ -214,4 +209,4 @@ const ViewPlano = () => {
 
 };
 
-export default PlanoView;
+export default ViewPlano;

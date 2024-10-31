@@ -18,6 +18,10 @@ const AdminDashboard = () => {
     navigate("/admin/view-avNeuropsicologica");
   };
 
+  const handleViewPlano = () => {
+    navigate("/admin/view-plano");
+  };
+
   const handleRegisterUser = () => {
     navigate("/admin/register-user");
   };
@@ -41,6 +45,10 @@ const AdminDashboard = () => {
       </div>
       <div onClick={handleViewAvNeuropsicologica} className="card">
         <img src={edicaoTb3} className="cadastro_foto" alt="Edição de Avaliação Neuropsicológica" />
+
+      </div>
+      <div onClick={handleViewPlano} className="card">
+        <img src={edicaoTb3} className="cadastro_foto" alt="Edição de Plano de Cuidados" />
 
       </div>
       <div onClick={handleRegisterUser} className="card">

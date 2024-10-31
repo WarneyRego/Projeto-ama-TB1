@@ -8,6 +8,11 @@ const FamilyDashboard = () => {
   const [anamneseData, setAnamneseData] = useState(null); // Para dados da Tb2
   const [showInfo, setShowInfo] = useState(false); 
   const [showAnamnese, setShowAnamnese] = useState(false); // Para controlar quando vai exibir os dados da tb2
+
+  const [planoData, setPlanoData] = useState(null); // Para dados da Tb4
+  const [showPlano, setShowPlano] = useState(false); // Para controlar quando vai exibir os dados da tb4
+
+
   const [avNeuropsicologicaData, setAvNeuropsicologicaData] = useState(null); // Para dados da Tb3
   const [showAvNeuropsicologica, setShowAvNeuropsicologica] = useState(false); // Para controlar quando vai exibir os dados da tb3
   const db = getFirestore();
@@ -50,6 +55,23 @@ const FamilyDashboard = () => {
         } else {
           console.log("Documento da TB1 não encontrado!");
         }
+
+        if (userDocSnap.exists()) {
+          setUserData(userDocSnap.data());
+
+          // Vai usar o RA obtido da TB1 para buscar os dados da TB4 
+          const ra = userDocSnap.data().ra;
+          const planoDocRef = doc(db, "TB4_Plano_De_Cuidados", ra); // Usando o RA para a busca
+          const planoDocSnap = await getDoc(planoDocRef);
+          if (planoDocSnap.exists()) {
+            setPlanoData(planoDocSnap.data());
+          } else {
+            console.log("Nenhum dado encontrado na tabela Plano de Cuidados!");
+          }
+        } else {
+          console.log("Documento da TB1 não encontrado!");
+        }
+
       }
     };
 
@@ -66,6 +88,10 @@ const FamilyDashboard = () => {
 
   const handleToggleAvNeuropsicologica = () => {
     setShowAvNeuropsicologica((prev) => !prev); 
+  };
+
+  const handleTogglePlano = () => {
+    setShowPlano((prev) => !prev); 
   };
 
   if (!userData) {
@@ -138,7 +164,29 @@ const FamilyDashboard = () => {
 
         </div>
       )}
+
+      {/* Botão para mostrar/ocultar informações da TB4 (RESUMINDO: TOGGLE) */}
+      {anamneseData && (
+        <button onClick={handleTogglePlano}>
+          {showAnamnese ? "Ocultar Plano De Cuidados" : "Mostrar Plano De Cuidados"}
+        </button>
+      )}
+
+      {/* Exibir informações da TB4 - Plano De Cuidados */}
+      {showPlano && planoData && (
+        <div>
+          <h2>Plano De Cuidados</h2>
+          <p><strong>RA:</strong> {planoData.ra}</p>
+          <p><strong>Atividades:</strong> {planoData.atividades}</p>
+          <p><strong>Nomes da Medicação:</strong> {planoData.nomesMedicacao}</p>
+          <p><strong>Dosagem:</strong> {planoData.dosagem}</p>
+          <p><strong>Frequência:</strong> {planoData.frequencia}</p>
+          <p><strong>Orientações:</strong> {planoData.orientacoes}</p>
+        </div>
+      )}
     </div>
+
+    
   );
 };
 

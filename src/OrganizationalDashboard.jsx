@@ -24,6 +24,10 @@ const handleViewAvNeuropsicologica = () => {
   navigate("/admin/view-avNeuropsicologica");
 };
 
+const handleViewPlano = () => {
+  navigate("/admin/view-plano");
+};
+
 const handleFamilyUserList = () => {
   navigate("/organizational/family-users-list");
 };
@@ -31,8 +35,13 @@ const handleFamilyUserList = () => {
 const HandleAnamneseForm = () => {
   navigate("/organizational/anamnese-form");
 };
+
 const HandleFormNeuropsicologica = () => {
   navigate("/organizational/avNeuropsicologica-form");
+};
+
+const HandleFormPlano = () => {
+  navigate("/organizational/plano-form");
 };
 
 const HandleFamilyList = () => {
@@ -64,10 +73,13 @@ const HandleFamilyList = () => {
        <img  className="cadastro_foto"  src={Vera} alt="Ver avaliação neuropsicologica" />
         </div>
         <div  onClick={HandleFormNeuropsicologica} className="card-org">
-
-             <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
-
-           
+       <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
+        </div>
+        <div onClick={handleViewPlano} className="card-org">
+       <img  className="cadastro_foto"  src={Vera} alt="Ver Plano de Cuidados" />
+        </div>
+        <div  onClick={HandleFormPlano} className="card-org">
+       <img className="cadastro_foto" src={Criar} alt="Criar Plano de Cuidados" />
         </div>
      
 
