@@ -51,8 +51,8 @@ body {
   }
   
   .itemz:focus {
-    border-color: #fbff00;
-    box-shadow: 0 0 5px rgba(251, 255, 0, 0.4);
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   }
   
   select {

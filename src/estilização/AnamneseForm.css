@@ -1,0 +1,53 @@
+
+  
+  .entere {
+    color: #000;
+    margin-top: 3em;
+    height: 45px;
+    width: 250px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 3em;
+    width: 100%;
+  }
+  
+
+  .entere:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .form_container {
+      width: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form_container {
+      width: 350px;
+     height: 500px;
+    }
+  
+    .title {
+      font-size: 1.15rem;
+    }
+  
+    .singup {
+      font-size: large;
+    }
+  
+    .enter {
+      width: 80%;
+    }
+  
+    
+  }
+  

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import Navbar from "./elements/Navbar";
+import './estilização/AnamneseForm.css'
 const AnamneseForm = () => {
   const [ra, setRa] = useState("");
   const [queixas, setQueixas] = useState("");
@@ -47,7 +48,7 @@ const AnamneseForm = () => {
   return (
     <>
     
-    <div className="tabela">
+    <div className="container">
       <div className="painel">
     <form className="formu" onSubmit={handleAnamneseSubmit}>
       <div>
@@ -125,7 +126,7 @@ const AnamneseForm = () => {
         />
       </div>
       
-      <button className="btno" type="submit">Salvar Anamnese</button>
+      <button className="entere" type="submit">Salvar Anamnese</button>
     </form>
     </div>
     </div>
