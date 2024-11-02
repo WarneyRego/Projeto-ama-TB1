@@ -1,0 +1,29 @@
+.containeree{
+   min-height: 100vh;
+   display: flex;
+}
+
+.entere {
+   
+    align-items: center;
+    flex-direction: column;
+    color: #000;
+    margin-top: 3em;
+    height: 45px;
+    width: 250px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 3em;
+  }
+
+  .entere:hover{
+    background-color: #000;
+    color: #fff;
+  }
+  

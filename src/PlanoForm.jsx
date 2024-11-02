@@ -5,7 +5,7 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 const PlanoForm = () => {
   const [ra, setRa] = useState("");
   const [atividades, setAtividades] = useState("");
-  const [nomeMedicacao, setNomeMedicacao] = useState("");
+  const [nomesDaMedicação, setNomeMedicacao] = useState("");
   const [dosagem, setDosagem] = useState("");
   const [frequencia, setFrequencia] = useState("");
   const [orientacoes, setOrientacoes] = useState("");
@@ -18,7 +18,7 @@ const PlanoForm = () => {
 
     const planoData = {
       atividades,
-      nomeMedicacao,
+      nomesDaMedicação,
       dosagem,
       frequencia,
       orientacoes,
@@ -26,7 +26,7 @@ const PlanoForm = () => {
     };
 
     try {
-      const planoDocRef = doc(db, "TB4_Plano", ra);
+      const planoDocRef = doc(db, "TB4_Plano_De_Cuidados", ra);
       await setDoc(planoDocRef, planoData);
       alert("Dados do Plano de Cuidado salvos com sucesso!");
 
@@ -69,7 +69,7 @@ const PlanoForm = () => {
         <label>Nome da Medicação:</label>
         <input
           type="text"
-          value={nomeMedicacao}
+          value={nomesDaMedicação}
           onChange={(e) => setNomeMedicacao(e.target.value)}
           placeholder="Nome da Medicação"
           required

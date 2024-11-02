@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-
+import './estilização/FamilyDashboard.css'
+import Navbar from "./elements/Navbar";
+import vera from  './assets/Vera.png'
 
 const FamilyDashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -99,17 +101,25 @@ const FamilyDashboard = () => {
   }
 
   return (
-    <div>
-      <h1>Painel do Usuário Familiar</h1>
+    <>
+    <Navbar/>
+    <nav>  <h1>Painel do Usuário Familiar</h1></nav>
+    <div className="containeree">
+    
       
       {/* Botão para mostrar/ocultar informações da TB1 (RESUMINDO: TOGGLE) */}
-      <button onClick={handleToggleInfo}>
+      <button className="entere" onClick={handleToggleInfo}>
         {showInfo ? "Ocultar Informações Pessoais" : "Mostrar Informações Pessoais"}
       </button>
       
       {/* Exibir informações da TB1 - Pessoas com TEA */}
       {showInfo && (
-        <div>
+        <div className="carder">
+          <div className="card-header">
+            <div className="card-texte">
+          <h2>Informações do usuário</h2>
+          </div>
+          </div>
           <p><strong>RA:</strong> {userData.ra}</p>
           <p><strong>Status:</strong> {userData.status}</p>
           <p><strong>Nome:</strong> {userData.nome}</p>
@@ -128,15 +138,19 @@ const FamilyDashboard = () => {
 
       {/* Botão para mostrar/ocultar informações da TB2 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
-        <button onClick={handleToggleAnamnese}>
-          {showAnamnese ? "Ocultar Anamnese Médica" : "Mostrar Anamnese Médica"}
-        </button>
+       <div className="card" onClick={handleToggleAnamnese}>
+        <img src="" alt="" />
+       </div>
       )}
 
       {/* Exibir informações da TB2 - Anamnese Médica */}
       {showAnamnese && anamneseData && (
-        <div>
+        <div className="carder">
+         <div className="card-header">
+            <div className="card-texte">
           <h2>Anamnese Médica</h2>
+          </div>
+          </div>
           <p><strong>RA:</strong> {anamneseData.ra}</p>
           <p><strong>Queixas:</strong> {anamneseData.queixas}</p>
           <p><strong>Histórico Pessoal:</strong> {anamneseData.historicoPessoal}</p>
@@ -149,15 +163,21 @@ const FamilyDashboard = () => {
 
       {/* Botão para mostrar/ocultar informações da TB3 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
-        <button onClick={handleToggleAvNeuropsicologica}>
-          {showAnamnese ? "Ocultar Avaliação Neuropsicológica" : "Mostrar Avaliação Neuropsicológica"}
-        </button>
+        <div className="card"  onClick={handleToggleAvNeuropsicologica}>
+          <img className="cadastro_foto" src={vera} alt="" />
+        </div>
+        
       )}
 
       {/* Exibir informações da TB3 - Avaliação Neuropsicológica */}
       {showAvNeuropsicologica && avNeuropsicologicaData && (
-        <div>
-          <h2>Avaliação Neuropsicológica</h2>
+        <div className="carder">
+            <div className="card-header">
+            <div className="card-texte">
+            <h2>Avaliação Neuropsicológica</h2>
+          </div>
+          </div>
+         
           <p><strong>RA:</strong> {avNeuropsicologicaData.ra}</p>
           <p><strong>Lista Teste:</strong> {avNeuropsicologicaData.listaTeste}</p>
           <p><strong>Resultados:</strong> {avNeuropsicologicaData.resultados}</p>
@@ -167,9 +187,7 @@ const FamilyDashboard = () => {
 
       {/* Botão para mostrar/ocultar informações da TB4 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
-        <button onClick={handleTogglePlano}>
-          {showAnamnese ? "Ocultar Plano De Cuidados" : "Mostrar Plano De Cuidados"}
-        </button>
+       <div className="card" onClick={handleTogglePlano}> </div>
       )}
 
       {/* Exibir informações da TB4 - Plano De Cuidados */}
@@ -186,7 +204,7 @@ const FamilyDashboard = () => {
       )}
     </div>
 
-    
+    </>
   );
 };
 

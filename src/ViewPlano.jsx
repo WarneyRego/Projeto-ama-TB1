@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getFirestore, collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import "./estilização/ViewPlano.css"
 import Navbar from "./elements/Navbar";
+
 const ViewPlano = () => {
   const [planos, setPlanos] = useState([]);
   const [selectedPlano, setSelectedPlano] = useState(null);
@@ -125,7 +126,7 @@ const ViewPlano = () => {
                   </svg>
 
                 </span>
-                <p class="text">Planos</p>
+                <p class="text">Editar plano</p>
 
               </button>
             </li>
@@ -137,7 +138,8 @@ const ViewPlano = () => {
             <div class="card-header">
 
               <div className="text-header">
-                <h2>Editando Plano de Cuidados{selectedPlano.ra}</h2>
+              <h2>Editando Plano de Cuidados {selectedPlano.RA}</h2>
+
               </div>
             </div>
             <div class="card-body">
@@ -148,7 +150,7 @@ const ViewPlano = () => {
                     class="form-control"
                     type="text"
                     value={editData.Atividades}
-                    onChange={(e) => setEditData({ ...editData, ativadades: e.target.value })}
+                    onChange={(e) => setEditData({ ...editData, atividades: e.target.value })}
                   />
                 </div>
                 <div class="form-group">
@@ -188,7 +190,7 @@ const ViewPlano = () => {
                   />
                 </div>
                 <div class="form-group">
-                  <label>Observacao Administrativa:</label>
+                  <label>Observação Administrativa:</label>
                   <input
                     class="form-control"
                     type="text"
