@@ -184,7 +184,7 @@ const RegisterUser = () => {
           />
         </>
       )}
-      <button className="btno" type="submit"> Criar usuário</button>
+      <button className="btn" type="submit"> Criar usuário</button>
     </form>
     </div>
     </div>

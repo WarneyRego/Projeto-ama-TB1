@@ -2,8 +2,8 @@
 .containere {
     position: relative; 
     padding: 40px;
-   
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background:  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+     url('../assets/imagem de fundo.jpg');
     overflow: hidden; 
 }
 
@@ -16,7 +16,7 @@
     right: 0;
     bottom: 0;
     background-image: url("../assets/imagem de fundo.jpg");
-    background-size: cover;
+    
     background-position: center;
     filter: blur(5px);
     z-index: -1; 
@@ -77,7 +77,22 @@ button {
     width: 100%;
     min-height: 100vh;
     min-width: 100%;
+ 
     
+}
+
+
+.aroyy {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../assets/imagem de fundo.jpg');
+    background-size: cover;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 .verAN{
     max-height: 260px;
@@ -143,5 +158,32 @@ button:hover {
     .aroy {
         flex-direction: column; 
         align-items: center;
+    }
+    
+   
+}
+@media (max-width: 768px) {
+   .card{
+    margin-top: 5em;
+   }
+    .aroyy {
+        justify-content: center;
+        padding: 10px;
+    }
+    .card-org {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aroyy {
+        padding: 5px;
+    }
+    .card-org {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding: 20px;
     }
 }

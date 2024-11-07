@@ -125,13 +125,15 @@ h1{
 
 
 .carder {
-   margin-top: 10em;
+  margin-bottom: 5em;
+   margin-top: 5em;
  margin-left: 5em;
     width :350px;
     border: 1px solid #000000;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
+    background-color: white;
 
   }
   

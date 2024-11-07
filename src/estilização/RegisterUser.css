@@ -13,8 +13,19 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to top, #9a9ca1 0%, #c2c4c7 52%, #e0e2e3 100%);
+  
+    background:  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('../assets/imagem de fundo.jpg');
+   overflow: hidden; 
     padding: 20px;
+    background-size: cover;
+  }
+  .tabela::before{
+    content: "";  
+  }
+  .tabela::after{
+    content: "";
+    background-color: #fbff00;
   }
   
 

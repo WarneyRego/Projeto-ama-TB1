@@ -1,28 +1,39 @@
-.card-org{
-    margin-top: 60px;
-    box-sizing: border-box;
-    width: 250px;
-    height: 254px;
-    background: #ffe49c;
-    border: 2px solid white;
-    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-    border-radius: 17px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    font-weight: bolder;
-    color: black;
+.card-org {
+  margin: 20px;
+  box-sizing: border-box;
+  width: 250px;
+  height: 254px;
+  background: #ffe49c;
+  border: 2px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+
+.card-org:hover {
+  border: 2px solid black;
+  transform: scale(1.1);
+}
+
+.card-org:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+@media (max-width: 768px) {
+  .aroyy {
+      justify-content: center;
+      padding: 10px;
   }
-  
-  .card-org:hover {
-    border: 2px solid black;
-    transform: scale(1.10);
-  }
-  
-  .card-org:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-  }
+ 
+}
+
+@media (max-width: 480px) {
+ 
+}

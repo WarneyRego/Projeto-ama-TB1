@@ -8,6 +8,10 @@ import Criar from  './assets/Criara.png'
 import Vera from  './assets/Vera.png'
 import Cadas from   './assets/CadasM.png'
 import ListaU from './assets/ListaU.png'
+import CadastroP  from './assets/Cadastrop.png'
+import EdiçãoP  from './assets/EdiçãoP.png'
+
+
 
 
 const OrganizationalDashboard = () => {
@@ -44,7 +48,7 @@ const HandleFamilyList = () => {
  
       <Navbar  />    <nav>  <h1>Painel do Usuário Organizacional</h1></nav>
       
-      <div className="aroy">
+      <div className="aroyy">
 
 
 
@@ -64,10 +68,20 @@ const HandleFamilyList = () => {
        <img  className="cadastro_foto"  src={Vera} alt="Ver avaliação neuropsicologica" />
         </div>
         <div  onClick={HandleFormNeuropsicologica} className="card-org">
+<<<<<<< Updated upstream
 
              <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
 
            
+=======
+       <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
+        </div>
+        <div onClick={handleViewPlano} className="card-org">
+       <img  className="cadastro_foto"  src={EdiçãoP} alt="Ver Plano de Cuidados" />
+        </div>
+        <div  onClick={HandleFormPlano} className="card-org">
+       <img className="cadastro_foto" src={CadastroP} alt="Criar Plano de Cuidados" />
+>>>>>>> Stashed changes
         </div>
      
 

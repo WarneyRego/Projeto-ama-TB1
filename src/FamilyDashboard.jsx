@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+<<<<<<< Updated upstream
 
 
+=======
+import './estilização/FamilyDashboard.css'
+import Navbar from "./elements/Navbar";
+import vera from  './assets/Vera.png'
+import VisualizarP from './assets/VisualizarP.png'
+>>>>>>> Stashed changes
 const FamilyDashboard = () => {
   const [userData, setUserData] = useState(null);
   const [anamneseData, setAnamneseData] = useState(null); // Para dados da Tb2
@@ -50,6 +57,26 @@ const FamilyDashboard = () => {
         } else {
           console.log("Documento da TB1 não encontrado!");
         }
+<<<<<<< Updated upstream
+=======
+
+        if (userDocSnap.exists()) {
+          setUserData(userDocSnap.data());
+
+          // Vai usar o RA obtido da TB1 para buscar os dados da TB4 
+          const ra = userDocSnap.data().ra;
+          const planoDocRef = doc(db, "TB4_PlanoDeCuidados", ra); // Usando o RA para a busca
+          const planoDocSnap = await getDoc(planoDocRef);
+          if (planoDocSnap.exists()) {
+            setPlanoData(planoDocSnap.data());
+          } else {
+            console.log("Nenhum dado encontrado na tabela Plano de Cuidados!");
+          }
+        } else {
+          console.log("Documento da TB1 não encontrado!");
+        }
+
+>>>>>>> Stashed changes
       }
     };
 
@@ -73,6 +100,7 @@ const FamilyDashboard = () => {
   }
 
   return (
+<<<<<<< Updated upstream
     <div>
       <h1>Painel do Usuário Familiar</h1>
       
@@ -80,6 +108,18 @@ const FamilyDashboard = () => {
       <button onClick={handleToggleInfo}>
         {showInfo ? "Ocultar Informações Pessoais" : "Mostrar Informações Pessoais"}
       </button>
+=======
+    <>
+    <Navbar/>
+    <nav>  <h1>Painel do Usuário Familiar</h1></nav>
+    <div className="aroyy">
+    
+      
+      {/* Botão para mostrar/ocultar informações da TB1 (RESUMINDO: TOGGLE) */}
+      <div className="card" onClick={handleToggleInfo}>
+<img src="" alt="" />
+      </div>
+>>>>>>> Stashed changes
       
       {/* Exibir informações da TB1 - Pessoas com TEA */}
       {showInfo && (
@@ -111,7 +151,13 @@ const FamilyDashboard = () => {
       {showAnamnese && anamneseData && (
         <div>
           <h2>Anamnese Médica</h2>
+<<<<<<< Updated upstream
           <p><strong>RA:</strong> {anamneseData.ra}</p>
+=======
+          </div>
+          </div>
+          <p><strong>RA:</strong> {anamneseData.id}</p>
+>>>>>>> Stashed changes
           <p><strong>Queixas:</strong> {anamneseData.queixas}</p>
           <p><strong>Histórico Pessoal:</strong> {anamneseData.historicoPessoal}</p>
           <p><strong>Histórico Familiar:</strong> {anamneseData.historicoFamiliar}</p>
@@ -128,16 +174,54 @@ const FamilyDashboard = () => {
         </button>
       )}
 
-      {/* Exibir informações da TB3 - Avaliação Neuropsicológica */}
+      {/* Exibir informações da TB4 - Avaliação Neuropsicológica */}
       {showAvNeuropsicologica && avNeuropsicologicaData && (
+<<<<<<< Updated upstream
         <div>
           <h2>Avaliação Neuropsicológica</h2>
           <p><strong>RA:</strong> {avNeuropsicologicaData.ra}</p>
+=======
+        <div className="carder">
+            <div className="card-header">
+            <div className="card-texte">
+            <h2>Avaliação Neuropsicológica</h2>
+          </div>
+          </div>
+         
+     
+>>>>>>> Stashed changes
           <p><strong>Lista Teste:</strong> {avNeuropsicologicaData.listaTeste}</p>
           <p><strong>Resultados:</strong> {avNeuropsicologicaData.resultados}</p>
 
         </div>
       )}
+<<<<<<< Updated upstream
+=======
+
+      {/* Botão para mostrar/ocultar informações da TB4 (RESUMINDO: TOGGLE) */}
+      {anamneseData && (
+       <div className="card" onClick={handleTogglePlano}> <img className="cadastro_foto" src={VisualizarP} alt="" /> </div>
+      )}
+
+      {/* Exibir informações da TB4 - Plano De Cuidados */}
+      {showPlano && planoData && (
+       
+            <div className="carder">
+            <div className="card-header">
+            <div className="card-texte">
+            <h2>Plano De Cuidados</h2>
+          </div>
+          </div>
+       
+          <p><strong>RA:</strong> {planoData.id}</p>
+          <p><strong>Atividades:</strong> {planoData.atividades}</p>
+          <p><strong>Nomes da Medicação:</strong> {planoData.nomesDaMedicação}</p>
+          <p><strong>Dosagem:</strong> {planoData.dosagem}</p>
+          <p><strong>Frequência:</strong> {planoData.frequência}</p>
+          <p><strong>Orientações:</strong> {planoData.orientações}</p>
+        </div>
+      )}
+>>>>>>> Stashed changes
     </div>
   );
 };

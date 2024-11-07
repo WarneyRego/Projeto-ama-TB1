@@ -137,7 +137,7 @@ const ViewAnamnese = () => {
             <div class="card-header">
 
               <div className="text-header">
-                <h2>Editando Anamnese{selectedAnamnese.ra}</h2>
+                <h2>Editando Anamnese{selectedAnamnese}</h2>
               </div>
             </div>
             <div class="card-body">
