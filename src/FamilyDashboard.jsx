@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-<<<<<<< Updated upstream
-
-
-=======
-import './estilização/FamilyDashboard.css'
+import cada from './assets/edicao2.png'
 import Navbar from "./elements/Navbar";
 import vera from  './assets/Vera.png'
 import VisualizarP from './assets/VisualizarP.png'
->>>>>>> Stashed changes
 const FamilyDashboard = () => {
   const [userData, setUserData] = useState(null);
   const [anamneseData, setAnamneseData] = useState(null); // Para dados da Tb2
   const [showInfo, setShowInfo] = useState(false); 
+  const [planoData, setPlanoData] =useState()
+  const [showPlano, setShowPlano] = useState(false)
   const [showAnamnese, setShowAnamnese] = useState(false); // Para controlar quando vai exibir os dados da tb2
   const [avNeuropsicologicaData, setAvNeuropsicologicaData] = useState(null); // Para dados da Tb3
   const [showAvNeuropsicologica, setShowAvNeuropsicologica] = useState(false); // Para controlar quando vai exibir os dados da tb3
@@ -57,8 +54,6 @@ const FamilyDashboard = () => {
         } else {
           console.log("Documento da TB1 não encontrado!");
         }
-<<<<<<< Updated upstream
-=======
 
         if (userDocSnap.exists()) {
           setUserData(userDocSnap.data());
@@ -76,12 +71,13 @@ const FamilyDashboard = () => {
           console.log("Documento da TB1 não encontrado!");
         }
 
->>>>>>> Stashed changes
       }
     };
 
     fetchUserData();
   }, [user, db]);
+
+  
 
   const handleToggleInfo = () => {
     setShowInfo((prev) => !prev); 
@@ -95,20 +91,15 @@ const FamilyDashboard = () => {
     setShowAvNeuropsicologica((prev) => !prev); 
   };
 
+  const handleTogglePlano = () => {
+    setShowPlano((prev) => !prev);
+  }
+
   if (!userData) {
     return <div>Carregando...</div>;
   }
 
   return (
-<<<<<<< Updated upstream
-    <div>
-      <h1>Painel do Usuário Familiar</h1>
-      
-      {/* Botão para mostrar/ocultar informações da TB1 (RESUMINDO: TOGGLE) */}
-      <button onClick={handleToggleInfo}>
-        {showInfo ? "Ocultar Informações Pessoais" : "Mostrar Informações Pessoais"}
-      </button>
-=======
     <>
     <Navbar/>
     <nav>  <h1>Painel do Usuário Familiar</h1></nav>
@@ -117,13 +108,16 @@ const FamilyDashboard = () => {
       
       {/* Botão para mostrar/ocultar informações da TB1 (RESUMINDO: TOGGLE) */}
       <div className="card" onClick={handleToggleInfo}>
-<img src="" alt="" />
+<img className="cadastro_foto" src={cada} alt="" />
       </div>
->>>>>>> Stashed changes
       
       {/* Exibir informações da TB1 - Pessoas com TEA */}
       {showInfo && (
-        <div>
+        <div className="carder">
+          <div className="card-header">
+          <div className="card-texte">
+            <h2>Informações</h2></div>
+          </div>
           <p><strong>RA:</strong> {userData.ra}</p>
           <p><strong>Status:</strong> {userData.status}</p>
           <p><strong>Nome:</strong> {userData.nome}</p>
@@ -142,22 +136,22 @@ const FamilyDashboard = () => {
 
       {/* Botão para mostrar/ocultar informações da TB2 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
-        <button onClick={handleToggleAnamnese}>
-          {showAnamnese ? "Ocultar Anamnese Médica" : "Mostrar Anamnese Médica"}
-        </button>
+        <div className="card" onClick={handleToggleAnamnese}></div>
+        
       )}
 
       {/* Exibir informações da TB2 - Anamnese Médica */}
       {showAnamnese && anamneseData && (
-        <div>
-          <h2>Anamnese Médica</h2>
-<<<<<<< Updated upstream
-          <p><strong>RA:</strong> {anamneseData.ra}</p>
-=======
+               <div className="carder">
+             <div className="card-header">
+            <div className="card-texte">
+            <h2>Anamnese Médica</h2>
           </div>
           </div>
+
+         
           <p><strong>RA:</strong> {anamneseData.id}</p>
->>>>>>> Stashed changes
+
           <p><strong>Queixas:</strong> {anamneseData.queixas}</p>
           <p><strong>Histórico Pessoal:</strong> {anamneseData.historicoPessoal}</p>
           <p><strong>Histórico Familiar:</strong> {anamneseData.historicoFamiliar}</p>
@@ -169,18 +163,15 @@ const FamilyDashboard = () => {
 
       {/* Botão para mostrar/ocultar informações da TB3 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
-        <button onClick={handleToggleAvNeuropsicologica}>
-          {showAnamnese ? "Ocultar Avaliação Neuropsicológica" : "Mostrar Avaliação Neuropsicológica"}
-        </button>
+        <div className="card" onClick={handleToggleAvNeuropsicologica}>
+          <img className="cadastro_foto" src={vera} alt="" />
+        </div>
+        
       )}
 
       {/* Exibir informações da TB4 - Avaliação Neuropsicológica */}
       {showAvNeuropsicologica && avNeuropsicologicaData && (
-<<<<<<< Updated upstream
-        <div>
-          <h2>Avaliação Neuropsicológica</h2>
-          <p><strong>RA:</strong> {avNeuropsicologicaData.ra}</p>
-=======
+
         <div className="carder">
             <div className="card-header">
             <div className="card-texte">
@@ -189,14 +180,12 @@ const FamilyDashboard = () => {
           </div>
          
      
->>>>>>> Stashed changes
+
           <p><strong>Lista Teste:</strong> {avNeuropsicologicaData.listaTeste}</p>
           <p><strong>Resultados:</strong> {avNeuropsicologicaData.resultados}</p>
 
         </div>
       )}
-<<<<<<< Updated upstream
-=======
 
       {/* Botão para mostrar/ocultar informações da TB4 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
@@ -221,9 +210,8 @@ const FamilyDashboard = () => {
           <p><strong>Orientações:</strong> {planoData.orientações}</p>
         </div>
       )}
->>>>>>> Stashed changes
-    </div>
-  );
-};
 
+    </div>
+  </>);
+}
 export default FamilyDashboard;

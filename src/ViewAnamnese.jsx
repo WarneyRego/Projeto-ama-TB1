@@ -137,7 +137,7 @@ const ViewAnamnese = () => {
             <div class="card-header">
 
               <div className="text-header">
-                <h2>Editando Anamnese{selectedAnamnese}</h2>
+                <h2>Editando Anamnese</h2>
               </div>
             </div>
             <div class="card-body">
@@ -213,5 +213,4 @@ const ViewAnamnese = () => {
   );
 
 };
-
 export default ViewAnamnese;

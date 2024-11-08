@@ -42,6 +42,10 @@ const HandleFormNeuropsicologica = () => {
 const HandleFamilyList = () => {
   navigate("/organizational/family-users-list");
 };
+const HandleFormPlano= () => {
+  navigate("/organizational/plano-form");
+}
+const handleViewPlano= () => { navigate("/admin/view-plano")}
 
   return (
     <>
@@ -68,12 +72,6 @@ const HandleFamilyList = () => {
        <img  className="cadastro_foto"  src={Vera} alt="Ver avaliação neuropsicologica" />
         </div>
         <div  onClick={HandleFormNeuropsicologica} className="card-org">
-<<<<<<< Updated upstream
-
-             <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
-
-           
-=======
        <img className="cadastro_foto" src={Criar} alt="Criar avaliação  neuropsicologica" />
         </div>
         <div onClick={handleViewPlano} className="card-org">
@@ -81,7 +79,6 @@ const HandleFamilyList = () => {
         </div>
         <div  onClick={HandleFormPlano} className="card-org">
        <img className="cadastro_foto" src={CadastroP} alt="Criar Plano de Cuidados" />
->>>>>>> Stashed changes
         </div>
      
 
