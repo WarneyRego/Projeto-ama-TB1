@@ -8,7 +8,7 @@ import Criar from  './assets/Criara.png'
 import Vera from  './assets/Vera.png'
 import Cadas from   './assets/CadasM.png'
 import ListaU from './assets/ListaU.png'
-import CadastroP  from './assets/Cadastrop.png'
+import CadastroP  from './assets/Cadastropainel.png'
 import EdiçãoP  from './assets/EdiçãoP.png'
 
 
