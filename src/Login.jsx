@@ -60,7 +60,7 @@ const Login = () => {
         <img src={Logo} alt="Logo" />
       </div>
   <div class="title_container">
-    <p class="title">Seja bem-vindo ao site da AMA</p>
+    <p class="title">Seja bem-vindo ao site da AMA!</p>
     <span class="subtitle">Realize o Login para prosseguir</span>
   </div>
      

@@ -5,6 +5,7 @@ import cada from './assets/edicao2.png'
 import Navbar from "./elements/Navbar";
 import vera from  './assets/Vera.png'
 import VisualizarP from './assets/VisualizarP.png'
+import Visuanamnese from '../src/assets/viewanamnsese.png'
 const FamilyDashboard = () => {
   const [userData, setUserData] = useState(null);
   const [anamneseData, setAnamneseData] = useState(null); // Para dados da Tb2
@@ -136,7 +137,9 @@ const FamilyDashboard = () => {
 
       {/* Botão para mostrar/ocultar informações da TB2 (RESUMINDO: TOGGLE) */}
       {anamneseData && (
-        <div className="card" onClick={handleToggleAnamnese}></div>
+        <div className="card" onClick={handleToggleAnamnese}>
+          <img className="cadastro_foto" src={Visuanamnese} alt="" />
+        </div>
         
       )}
 
